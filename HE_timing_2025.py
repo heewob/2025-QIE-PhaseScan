@@ -32,7 +32,7 @@ def read_corr():
         next(f)
         for line in f:
             l = line.split()
-            for i in range (1,5):
+            for i in range (1,8):
                 ed = l[0] + " " + str(i)
                 corrs[ed] = float(l[i])
 
