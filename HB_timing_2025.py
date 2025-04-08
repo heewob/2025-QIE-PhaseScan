@@ -51,6 +51,9 @@ def loop():
                 geom = mapka[chan]
                 ed = str(geom[0]) + " " + str(geom[2])
                 newdel = 64 if "-999" in ed else int(delay.text)+int(round(corrs[ed])) # round(corrs[ed] / 0.5 if file given in ns        #Depth = -999 in the Lmap is calibration unit/blind channels
+                if (newdel<64 and newdel>49): # account for the 14 skipped values
+                    newdel = newdel+14
+
                 if newdel>113 or (newdel>48 and newdel<64): print (newdel)
                 delay.text = str(newdel)
     
