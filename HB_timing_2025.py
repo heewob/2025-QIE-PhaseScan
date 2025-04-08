@@ -54,7 +54,7 @@ def loop():
                 if (newdel<64 and newdel>49): # account for the 14 skipped values
                     newdel = newdel+14
 
-                if newdel>113 or (newdel>48 and newdel<64): print (newdel)
+                if newdel>113 or (newdel>49 and newdel<64): print (newdel)
                 delay.text = str(newdel)
     
     tree.write('HB_QIEscanSetting_timing'+today+'.xml') # new QIE phase setting with adjustments made after 2025
