@@ -39,7 +39,7 @@ cd HcalCfg
 git fetch
 git pull origin pro
 ```
-Now we can make changes in the CFGgit files. Edit lines in Master/global.xml and RBX/ngSettings.cfg to have the new scan setting files. 
+Now we can make changes in the CFGgit files. Edit lines in Master/global.xml and RBX/ngSettings.cfg to have the new scan setting files and uMNio word. 
 Reference commit log (http://hcalmon.cms/cgit/HcalCfg/commit/?id=ac11ad5097c823f5937fb31b6f7c79ee6859523b). After making the change, push the change.
 
 - Third, check if the change is applied.
@@ -48,7 +48,15 @@ Do `get` phase delay and TDCLUT to see if the change is applied.
 
 4. Run the phase scan
 
-Connect to HCAL PC, `ssh hcalngccm03`. For both HB and HE scan `python2 scan_fine.py --seconds 600 --cycles -1 --hb --he --logfile 2025scan.txt | tee output_2025_scan.txt`.
+Connect to HCAL PC and open a tmux session. Use scan_fine.py to scan with each point for 600 seconds.
+```
+ssh hcalngccm03
+tmux new -s 2025Scan
+python2 scan_fine.py --seconds 600 --cycles -1 --hb --he --logfile 2025Scan.txt | tee output_2025_scan.txt
+```
+After detatching from tmux (Ctrl+B and D), reattach with tmux attach-session -t 2025Scan.
+
 During the phase scan, be connected to P5 shifter zoom at all times.
+You can find a detailed guide to phase scan [here](https://github.com/gk199/QIE_PhaseScan/blob/main/QIE_Scan.md)
 
 5. Lastly, revert the config to original
