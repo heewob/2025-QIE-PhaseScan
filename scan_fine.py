@@ -13,7 +13,7 @@ def applySetting(module, setting, subdet, client, host, port, test_mode, logfile
     #cmds += module.commands(setting, subdet, put=False)
     cmds = module.commands(setting, subdet, put=True)
 
-    f = 'v2/' + str(setting) + 'ns_' + str(subdet) + '.txt' # GK would need to label files by HE or HB
+    f = 'delays_apriltest/' + str(setting) + 'ns_' + str(subdet) + '.txt' # GK would need to label files by HE or HB
 
     if test_mode:
         fec_jm_fine.onlyLog(client, host, port, cmds, logfile, file_script = f)
