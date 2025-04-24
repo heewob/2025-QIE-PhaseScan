@@ -20,6 +20,11 @@ def commands(setting, subdet, put=False):
     else:
         print("Subdetector %s is not supported." % subdet)
         return out
+    try:
+        open(c)
+    except FileNotFoundError:
+        print("File does not exist: ", c)
+
     return out
 
 def test():
