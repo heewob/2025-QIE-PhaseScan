@@ -15,6 +15,12 @@ def applySetting(module, setting, subdet, client, host, port, test_mode, logfile
 
     f = 'delays_apriltest/' + str(setting) + 'ns_' + str(subdet) + '.txt' # GK would need to label files by HE or HB
 
+    try:
+        open(f)
+    except FileNotFoundError:
+        print("File does not exist: ", f)
+
+
     if test_mode:
         fec_jm_fine.onlyLog(client, host, port, cmds, logfile, file_script = f)
     else:
