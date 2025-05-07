@@ -3,7 +3,7 @@
  - `HBTDCLUT-HB_TDC_2024_v1.xml` is the original TDCLUT. This wasn't changed for 2025 May phase scan. This can be found on http://hcalmon.cms/xmldbweb/viewxml/4/
  -  `Lmap_ngHX_N_20200212.txt` is the Lmap for each subdetectors.
  - `phaseTuning_HB_2024_v2.xml` and `phaseTuning_HE_2024_Jul.xml` were the phase scan setting for 2024 (http://hcalmon.cms/xmldbweb/viewxml/1/). This will be used as the 'reference setting' for the new 2025 phase scan setting.
- - `HB_QIEphase_adjustment_relativeTo2024_2025v1.txt` and `HE_QIEphase_adjustment_relativeTo2024_2025v1.txt` are the new phase adjustments.
+ - `HB_adjustments_4GeVET_relativeTo2024.txt` and `HE_adjustments_8GeVE_relativeTo2024.txt` are the new phase adjustments.
  - `HB_timing_2025.py` and `HE_timing_2025.py` takes in the reference scan setting and the new adjustments and make the new phase scan settings.
  - `HB_generate_delays.py` and `HE_generate_delays.py` takes in the new phase scan setting and generates txt files of delays.
  - `IGLOO2_xml_creator_LUT_TDCcoding_depth.py` makes LUT xml file.
